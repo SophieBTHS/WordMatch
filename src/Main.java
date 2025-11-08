@@ -11,6 +11,15 @@ public class Main {
         System.out.println(game2.scoreGuess("aa"));
         System.out.println(game2.scoreGuess("aaa"));
         System.out.println(game2.scoreGuess("aabb"));
-        System.out.println(game2.scoreGuess("c"));
+        System.out.println(game2.scoreGuess("c") + "\n");
+
+        WordMatch game = new WordMatch("Concatenation");
+        System.out.println(game.scoreGuess("ten"));
+        System.out.println(game.scoreGuess("nation"));
+        System.out.println(game.findBetterGuess("ten", "nation"));
+        System.out.println(game.scoreGuess("con"));
+        System.out.println(game.scoreGuess("cat"));
+        System.out.println(game.findBetterGuess("con", "cat"));
+
     }
 }

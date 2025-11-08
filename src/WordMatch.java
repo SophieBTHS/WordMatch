@@ -9,7 +9,13 @@ public class WordMatch{
         }
         return numOccurrences * ((int) Math.pow(guess.length(), 2));
     }
-//    public String findBetterGuess(String guess1, String guess2){
-//
-//    }
+    public String findBetterGuess(String guess1, String guess2){
+        if (scoreGuess(guess1) != scoreGuess(guess2)){
+        if (scoreGuess(guess1) > scoreGuess(guess2)) return guess1;
+        return guess2;
+        }
+        if (guess1.compareTo(guess2) > 0) return guess1;
+        return guess2;
+
+    }
 }
