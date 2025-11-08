@@ -1,22 +1,15 @@
-public class WordMatch
-{
-    /** The secret string. */
+public class WordMatch{
     private String secret;
-    /** Constructs a WordMatch object with the given secret string of lowercase letters. */
-    public WordMatch(String word)
-    {
-        /* implementation not shown */
+    public WordMatch(String word){secret = word.toLowerCase();}
+    public int scoreGuess(String guess){
+        guess = guess.toLowerCase();
+        int numOccurrences = 0;
+        for (int i = 0; i <= (secret.length() - guess.length()); i++) {
+            if(guess.equals(secret.substring(i, (i + guess.length()))) ) numOccurrences ++;
+        }
+        return numOccurrences * ((int) Math.pow(guess.length(), 2));
     }
-    /** Returns a score for guess, as described in part (a).
-     * Precondition: 0 < guess.length() <= secret.length()
-     */
-    public int scoreGuess(String guess)
-    { /* to be implemented in part (a) */ }
-    /** Returns the better of two guesses, as determined by scoreGuess and the rules for a
-     * tie-breaker that are described in part (b).
-     * Precondition: guess1 and guess2 contain all lowercase letters.
-     * guess1 is not the same as guess2.
-     */
-    public String findBetterGuess(String guess1, String guess2)
-    { /* to be implemented in part (b) */ }
+//    public String findBetterGuess(String guess1, String guess2){
+//
+//    }
 }
